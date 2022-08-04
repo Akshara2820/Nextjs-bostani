@@ -9,26 +9,25 @@ function Contact() {
           <div className="contact-div">
             <div className="form">
               <h3 className="contact-head">
-                I'm always open to discussing product
+                Im always open to discussing product
               </h3>
               <h3 className="contact-heading">
-                {" "}
-                design work or partnerships.{" "}
+                design work or partnerships.
               </h3>
 
               <form>
                 <div className="">
-                  <label className="label">Name *</label>
+                  <label className="label">Name </label>
                   <input type="text" name="name" className="input" required />
                 </div>
 
                 <div className="">
-                  <label className="label">Email *</label>
+                  <label className="label">Email </label>
                   <input type="text" name="name" className="input" required />
                 </div>
 
                 <div className="">
-                  <label className="label">Message *</label>
+                  <label className="label">Message </label>
                   <input type="text" name="name" className="input" required />
                 </div>
 

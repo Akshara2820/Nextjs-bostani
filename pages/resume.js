@@ -67,8 +67,8 @@ function Resume() {
                     </div>
                     {i.items.map((k) => {
                       return (
-                        <div className="resume-card2">
-                        <div  key={k.title}>
+                        <div className="resume-card2"  key={k.title}>
+                        <div >
                           <div className="date">{k.date}</div>
                           <div className="resume-title">{k.title}</div>
                           <div className="resume-paragraph">{k.disc}</div>
