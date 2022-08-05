@@ -26,7 +26,6 @@ function Navbar() {
                 return (
                   <Link href={item.path} key={item.path}>
                     <div className="item-icon">
-                      {" "}
                       {item.icon}
                       <div className="item-name"> {item.name}</div>
                     </div>
@@ -49,8 +48,8 @@ const Navbar1 = styled.div`
   .navbar {
     background-color: white;
     border-radius: 20px;
-    padding: 20px;
-    padding-right: 10px;
+    padding: 30px;
+    padding-right: 30px;
     display: inline-flex;
    
   }
@@ -63,14 +62,18 @@ const Navbar1 = styled.div`
     background-color: #ef4060;
     color: white;
   }
+  .item-name{
+    font-size:15px;
+
+  }
   .item-icon {
     border-radius: 10px;
     padding: 10px;
     text-align: center;
-
     background-color: #f3f6f6;
     font-size: 20px;
-    color: gray;
+    color:#3B3B3B
+  
   }
   @media only screen and (max-width: 1020px) {
     .navbar {

@@ -54,7 +54,7 @@ function Header() {
                     <FiMoon />
                   </h2>
                 </div>
-                <div>
+                <div className="">
                   <button
                     className="menu-bar"
                     onClick={() => {
@@ -65,24 +65,25 @@ function Header() {
                   </button>
                 </div>
               </div>
-
-              <div className={`${isMenu ? "" : "view_menu"} menu-bar bar`}>
-                <div className="">
-                  {menuItems.map((item, index) => (
-                    <div className="m-2" key={index}>
-                      <Link href={item.href}>
-                        <div className="">
-                          <div className="">{item.icon}</div>
-                          <div className=""> {item.title}</div>
-                        </div>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </Header1>
+
+        <div className={`${isMenu ? "" : "view_menu"} menu-bar bar`}>
+          <div className="bar-menu">
+            {menuItems.map((item, index) => (
+              <div className="m-2" key={index}>
+                <Link href={item.href}>
+                  <div className="slider">
+                    <div className="">{item.icon}</div>
+                    <div className=""> {item.title}</div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+        
       </div>
     </>
   );
@@ -128,19 +129,15 @@ const Header1 = styled.div`
       justify-content: space-between;
       background-color: #f8f8ff;
     }
+
     .menu-bar {
       visibility: visible;
       padding: 10px;
       background-color: #ef4060;
       border-radius: 25px;
-      align-items: center;
       color: white;
       margin-top: 20px;
     }
-    .bar{
-      background-color:#f8fbfb;
-      color:black;
-    }
-
+    
   }
 `;

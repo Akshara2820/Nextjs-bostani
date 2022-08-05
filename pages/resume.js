@@ -110,7 +110,7 @@ margin-top:1rem;
 
 }
 .resume-heading{
-  font-family: "Roboto Slab", sans-serif;
+ 
 }
 .resume-icon{
   color: #ef4060;
@@ -120,12 +120,12 @@ margin-top:1rem;
   font-size:15px
 }
 .resume-title{
-  font-family: "Roboto Slab", sans-serif;
+ 
   font-weight:700;
   margin-top:12px;
 }
 .resume-paragraph{
-  font-family: "Poppins", sans-serif;
+  
   margin-top:12px;
 }
 

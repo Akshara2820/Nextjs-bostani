@@ -13,6 +13,10 @@ function Card(props) {
               </div>
               <div>{props.children}</div>
             </div>
+
+            <div className="Footer">
+              <p>© 2022 All Rights Reserved by ib-themes.</p>
+            </div>
           </div>
         </Card1>
       </div>
@@ -29,11 +33,18 @@ const Card1 = styled.div`
     margin-top: 50px;
     border-radius: 20px;
     padding: 20px;
-  
   }
   .tittle {
-    font-family: "Roboto Slab", sans-serif;
     font-weight: 900;
     font-size: 35px;
+  }
+  .Footer {
+    font-size:16px;
+    color:gray;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px 0px 0px 0px;
+    display:flex;
+    justify-content:center
   }
 `;

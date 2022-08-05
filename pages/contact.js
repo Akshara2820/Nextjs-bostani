@@ -52,12 +52,12 @@ const Contact1 = styled.div`
   .contact-head {
     color: gray;
     font-size: 22px;
-    font-family: "Poppins", sans-serif;
+    
   }
 
   .contact-heading {
     font-size: 25px;
-    font-family: "Poppins", sans-serif;
+  
     margin-top: -10px;
   }
   .form {

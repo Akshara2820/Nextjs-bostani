@@ -1,13 +1,16 @@
 import React from "react";
+import { useState } from "react";
+import Model from "./components/modelbox";
 import Card from "./components/card";
 import styled from "styled-components";
 const Items = [
   { type: "Ui/Ux", name: "Chul urina", image: "./work-img.jpg" },
   { type: "Web Design", name: "Aura Dione", image: "./work-img-2.jpg" },
   { type: "Logo", name: "Chul urina", image: "./work-img-3.jpg" },
-  { type: "Video", name: "Chul urina", image: "./work-img-4.jpg" },
+  { type: "Video", name: "Chul urina", image: "./work-img-4.jpg", },
 ];
-function Works() {
+function Works({}) {
+  const [modalIndex, setModalIndex] = useState(-1);
   return (
     <>
       <Card title="Portfolio">
@@ -17,15 +20,14 @@ function Works() {
             <p className="heading">Videos</p>
             <p className="heading">Web Design</p>
             <p className="heading">Logo</p>
-            <p className="heading">Graphic Design</p>
           </div>
           <div className="work-card">
             {Items.map((item) => {
               return (
                 <>
                   <div className="work-card2" key={item.name}>
-                    <div className="">
-                      <img className="work-image" src={item.image} alt="Loading..." style={{height:'auto',width:'100%'}}  />
+                    <div className="ul">
+                      <img className="work-image grow" src={item.image} alt="Loading..." style={{height:'auto',width:'100%'}}  />
                     </div>
                     <p className="work-type">{item.type}</p>
                     <h3 className="work-name">{item.name}</h3>
@@ -33,9 +35,11 @@ function Works() {
                 </>
               );
             })}
+           
           </div>
         </Works1>
       </Card>
+      <Model  onClose={() => setModalIndex(-1)} show={modalIndex !== -1}/>
     </>
   );
 }
@@ -48,14 +52,16 @@ const Works1 = styled.div`
     gap: 10px;
     padding: 10px;
     justify-content: end;
-    font-family: "Poppins", sans-serif;
   }
   .heading:hover {
     color: #fa5252;
   }
   .work-card {
     display:grid;
-    grid-template-columns: auto auto ;
+    grid-template-columns: 45% 45%;
+  gap:2rem;
+  justify-content:center ;
+
     gap:20px;
     padding:20px;
   }
@@ -64,31 +70,32 @@ const Works1 = styled.div`
     border-radius:15px;
     padding: 20px;
   }
-  .work-image{
-    border-radius:15px;
+  .ul{
+    overflow: hidden;
+      border-radius: 15px;
+      aspect-ratio:1.2; 
   }
+    .work-image{
+    
+      &.grow{
+        transition: all .3s ease-in-out;
+        &:hover {
+          cursor:pointer;
+          transform: scale(1.2);
+        }
+      }
+    }
+
   .work-type{
-    font-family: "Poppins", sans-serif;
     color:gray
   }
   .work-name{
-    font-family: "Roboto Slab", sans-serif;
     font-weight:700;
   }
 
   .work-name:hover{
     color: #fa5252;
   }
-
-
-
-  @media only screen and (max-width: 1242px) {
-    .work-card{
-     
-    }
-  
-    }
-
 
   @media only screen and (max-width: 760px) {
     .work-card{

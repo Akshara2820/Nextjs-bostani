@@ -37,8 +37,8 @@ function Blog() {
             {Items.map((i) => {
               return (
                 <div className="blog-card2" key={i.name}>
-                  <div>
-                    <img className="blog-image" src={i.image} alt="loading..." style={{height:'auto',width:'100%'}}  />{" "}
+                  <div className="ul">
+                    <img className="blog-image grow" src={i.image} alt="loading..." style={{width:'100%'}}  />{" "}
                   </div>
                   <div className="blog-catagory">
                     <p>{i.date} </p>
@@ -63,9 +63,11 @@ const Blog1 = styled.div`
 
 
 .blog-card{
-  display:grid;
-grid-template-columns: auto auto ;
-gap:20px;
+  display: grid;
+  
+  grid-template-columns: 37% 37%;
+  gap:2rem;
+  justify-content:center ;
 
 }
 .blog-card2{
@@ -80,14 +82,26 @@ gap:20px;
 .blog-heading:hover{
   color: #fa5252;
 }
-.blog-image{
-  border-radius:15px;
+.ul{
+  overflow: hidden;
+    border-radius: 15px;
+    aspect-ratio:1.2; 
 }
+  .blog-image{
+  
+    &.grow{
+      transition: all .3s ease-in-out;
+      &:hover {
+        cursor:pointer;
+        transform: scale(1.2);
+      }
+    }
+  }
 
 
 .blog-catagory{
   display:flex;
-  font-family: "Poppins", sans-serif;
+
 }
 @media only screen and (max-width: 760px) {
   .blog-card{

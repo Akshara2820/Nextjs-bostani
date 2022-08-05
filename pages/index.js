@@ -84,12 +84,12 @@ export default function Home() {
 
 const About = styled.div`
   .about-paragraph {
-    font-family: "Poppins", sans-serif;
+   
     color: #808080;
     word-spacing: 2px;
   }
   .about-heading {
-    font-family: "Roboto Slab", sans-serif;
+   
     font-weight: 900;
     font-size: 30px;
   }
@@ -117,12 +117,11 @@ const About_Card = styled.div`
   gap: 12px;
 }
 .about-heading{
-  font-family: "Roboto Slab", sans-serif;
+
   font-weight:700;
   font-size: 18px;
 }
 .about-paragraph{
-    font-family: "Poppins", sans-serif;
     font-size: 15px;
   }
 

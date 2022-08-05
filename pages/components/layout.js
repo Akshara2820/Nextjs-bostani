@@ -47,13 +47,13 @@ export default Layout;
 
 const Layout1 = styled.div`
 .layout{
-  max-width: 1100px;
+  max-width: 1300px;
   margin: auto;
 }
   .card-profile {
     display: flex;
     justify-content: space-between;
-    margin-top: 15rem;
+    margin-top: 12rem;
     gap:34px
   }
   .card {
