@@ -13,6 +13,7 @@ function Works({}) {
   const [modalIndex, setModalIndex] = useState(-1);
   return (
     <>
+  
       <Card title="Portfolio">
         <Works1>
           <div className="work-heading">
@@ -22,10 +23,10 @@ function Works({}) {
             <p className="heading">Logo</p>
           </div>
           <div className="work-card">
-            {Items.map((item) => {
+            {Items.map((item,indx) => {
               return (
                 <>
-                  <div className="work-card2" key={item.name}>
+                  <div className="work-card2" key={item.name} onClick={() => { setModalIndex(indx) }}  >
                     <div className="ul">
                       <img className="work-image grow" src={item.image} alt="Loading..." style={{height:'auto',width:'100%'}}  />
                     </div>
@@ -39,7 +40,7 @@ function Works({}) {
           </div>
         </Works1>
       </Card>
-      <Model  onClose={() => setModalIndex(-1)} show={modalIndex !== -1}/>
+      <Model  onClose={() => setModalIndex(-1)} show={modalIndex !== -1} {...Items[modalIndex]} val={'work'}/>
     </>
   );
 }
@@ -61,7 +62,6 @@ const Works1 = styled.div`
     grid-template-columns: 45% 45%;
   gap:2rem;
   justify-content:center ;
-
     gap:20px;
     padding:20px;
   }
@@ -85,18 +85,15 @@ const Works1 = styled.div`
         }
       }
     }
-
   .work-type{
     color:gray
   }
   .work-name{
     font-weight:700;
   }
-
   .work-name:hover{
     color: #fa5252;
   }
-
   @media only screen and (max-width: 760px) {
     .work-card{
       display:grid;

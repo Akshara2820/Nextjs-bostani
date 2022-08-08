@@ -1,44 +1,48 @@
 import React from "react";
+import { useState } from "react";
 import Card from "./components/card";
 import styled from "styled-components";
+import Model from "./components/modelbox";
 
 const Items = [
   {
-    name: "How to Own Your Audience by Creating an Email List.",
+   blog_name: "How to Own Your Audience by Creating an Email List.",
     date: "177 April",
     catagory: "Inspiration",
-    image: "./blog-img.jpg",
+    blog_img: "./blog-img.jpg",
   },
   {
-    name: "Everything You Need to Know About Web Accessibility.",
+   blog_name: "Everything You Need to Know About Web Accessibility.",
     date: "000 April",
     catagory: "Inspiration",
-    image: "./blog-img-2.jpg",
+    blog_img: "./blog-img-2.jpg",
   },
   {
-    name: "The window know to say beside you",
+   blog_name: "The window know to say beside you",
     date: "21 April",
     catagory: "Web Design",
-    image: "./blog-img-3.jpg",
+    blog_img: "./blog-img-3.jpg",
   },
   {
-    name: "Top 10 Toolkits for Deep Learning in 2021.",
+   blog_name: "Top 10 Toolkits for Deep Learning in 2021.",
     date: "27 Apil",
     catagory: "Inspiration",
-    image: "./blog-img-4.jpg",
+    blog_img: "./blog-img-4.jpg",
   },
 ];
 function Blog() {
+  const [modalIndex, setModalIndex] = useState(-1);
+ 
   return (
     <>
       <Card title="Blog">
         <Blog1>
           <div className="blog-card">
-            {Items.map((i) => {
+            {Items.map((i,indx) => {
               return (
-                <div className="blog-card2" key={i.name}>
+                <div className="blog-card2" key={i.blog_name}  onClick={() => { setModalIndex(indx) }} >
                   <div className="ul">
-                    <img className="blog-image grow" src={i.image} alt="loading..." style={{width:'100%'}}  />{" "}
+                    <img className="blog-image grow" src={i.blog_img} alt="loading..." style={{width:'100%'}}  />{" "}
                   </div>
                   <div className="blog-catagory">
                     <p>{i.date} </p>
@@ -46,13 +50,14 @@ function Blog() {
                       <li>{i.catagory}</li>
                     </ul>
                   </div>
-                  <h3 className="blog-heading">{i.name}</h3>
+                  <h3 className="blog-heading">{i.blog_name}</h3>
                 </div>
               );
             })}
           </div>
         </Blog1>
       </Card>
+      <Model  onClose={() => setModalIndex(-1)} show={modalIndex !== -1} {...Items[modalIndex]}/>
     </>
   );
 }
